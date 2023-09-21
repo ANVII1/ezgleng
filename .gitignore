@@ -1,3 +1,6 @@
 ezgleng
-gfx
+CMakeFiles
+Makefile
+CMakeCache.txt
+*.cmake
 .vscode/
