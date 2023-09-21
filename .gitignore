@@ -2,5 +2,6 @@ ezgleng
 CMakeFiles
 Makefile
 CMakeCache.txt
+EZGLENG
 *.cmake
 .vscode/

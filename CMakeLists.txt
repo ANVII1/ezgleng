@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27 FATAL_ERROR)
 
 # set project name and programming language
-set(ProjName EZGLENGRBLD)
+set(ProjName EZGLENG)
 
 project(${ProjName} CXX)
 
