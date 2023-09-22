@@ -12,6 +12,7 @@ namespace CORE
     private:
         void CreateRect(CORE::Color color, CORE::Cord cord);
         void CreateFloor();
+        void render_sqd();
 
     public:
         World(GLFWwindow* window);

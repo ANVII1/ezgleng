@@ -14,8 +14,8 @@ CORE::Entity::Entity(GLFWwindow *window,Cord cord, Axis axis)
     this->cord = cord;
     this->axis = axis;
     this->window = window;
-
 }
+
 // CONSTRUCTOR BUISNESS CLASS
 CORE::Entity::Entity(GLFWwindow *window, CORE::Cord cord)
 {

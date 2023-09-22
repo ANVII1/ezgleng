@@ -11,7 +11,6 @@ namespace CORE
         CORE::Color color;
 
     public:
-        // construct on Coordinates with axis
         VisibleObject(GLFWwindow *window, CORE::Color color, CORE::Axis axis, CORE::Cord cord, float verteces[], unsigned int verArrLenght); // MB BUG
 
         ~VisibleObject();

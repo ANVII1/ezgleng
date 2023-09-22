@@ -3,6 +3,22 @@
 #include "Player.hpp"
 #include <GLFW/glfw3.h>
 
+void CORE::World::render_sqd()
+{
+    GLfloat verteces[] = 
+    {
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f,
+        0.5f, 0.5f, 0.0f,
+        -0.5f, 0.5f, 0.0f
+    };
+    
+    glColor3f(0,0,0);
+    glVertexPointer(3,GL_FLOAT,0,&verteces);
+    glEnableClientState(GL_VERTEX_ARRAY);
+        glDrawArrays(GL_TRIANGLE_FAN,0,4);
+    glDisableClientState(GL_VERTEX_ARRAY);
+}
 
 void CORE::World::CreateRect(CORE::Color color, CORE::Cord cord)
 {
@@ -27,6 +43,9 @@ void CORE::World::CreateFloor()
             CORE::Cord cord {-i,-1,-j}; // MB bug
             if ((j+i)%2==0) 
                 {color = {1,1,1,1};}
+            else 
+                {color = {0,0,0,1};}
+            CreateRect(color,cord);
         }
     }
 }

@@ -20,6 +20,9 @@ const unsigned int windowWidth = 900;
 
 using namespace std;
 
+
+
+
 int main()
 {
     CORE::Window *window = new CORE::Window(windowWidth,windowHeight,"TRIPLE AAA GAME");
