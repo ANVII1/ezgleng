@@ -20,19 +20,16 @@ const unsigned int windowWidth = 900;
 
 using namespace std;
 
-
-
-
 int main()
 {
-    CORE::Window *window = new CORE::Window(windowWidth,windowHeight,"TRIPLE AAA GAME");
-    CORE::World *world = new CORE::World(window->getWindow() );
-    while (!window->isShouldClose())
+    CORE::Window::init(windowWidth,windowHeight,"TRIPLE AAA GAME");
+    CORE::World *world = new CORE::World(CORE::Window::window);
+    while (!CORE::Window::isShouldClose())
     {
-        window->pollEvents();
+        CORE::Window::pollEvents();
         world->update();
-        window->swapBuffers();
+        CORE::Window::swapBuffers();
     }
-    delete window, world;
+    delete world;
     return 0;
 }

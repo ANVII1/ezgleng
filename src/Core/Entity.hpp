@@ -16,6 +16,11 @@ namespace CORE
     {
         float R,G,B,A;
     };
+    struct Speed
+    {
+        float X, Y, Z;
+        float maxX, maxY, maxZ;
+    };
 
     class Entity 
     {

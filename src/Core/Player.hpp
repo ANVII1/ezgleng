@@ -5,6 +5,7 @@ namespace CORE
     class Player : public CORE::Entity
     {
     private:
+        float braking;
         void rotateCamera();
     public:
         Player(GLFWwindow *window);

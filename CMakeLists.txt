@@ -21,6 +21,8 @@ add_executable(${ProjName}
     ${PROJECT_SOURCE_DIR}/src/Core/VisibleObject.cpp 
     ${PROJECT_SOURCE_DIR}/src/Core/World.hpp
     ${PROJECT_SOURCE_DIR}/src/Core/World.cpp 
+    ${PROJECT_SOURCE_DIR}/src/Core/Events.cpp
+    ${PROJECT_SOURCE_DIR}/src/Core/Events.hpp
 )
 
 include_directories(
@@ -30,8 +32,7 @@ include_directories(
 
 # include GLFW library
 #find_package(glfw3 3.3 REQUIRED)
-target_link_libraries(${ProjName} PUBLIC glfw)
-target_link_libraries(${ProjName}  PUBLIC GL)
+target_link_libraries(${ProjName} PUBLIC glfw GL)
 
 # include directories
 #target_include_directories(${ProjName} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)

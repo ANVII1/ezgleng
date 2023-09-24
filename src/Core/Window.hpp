@@ -1,18 +1,17 @@
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 namespace CORE
 {
     class Window {
-    private:
-        GLFWwindow* window;
     public:
-        Window(int width, int height, const char* title);
-        ~Window();
+        static GLFWwindow* window;
+        static int init(int width, int height, const char* title);
+        static int final();
 
-        GLFWwindow* getWindow();
-        void pollEvents();
-        bool isShouldClose();
-        void setShouldClose(bool flag);
-        void swapBuffers();
+        static void pollEvents();
+        static bool isShouldClose();
+        static void setShouldClose(bool flag);
+        static void swapBuffers();
     };
 }

@@ -1,17 +1,24 @@
 #include "Player.hpp"
 #include <iostream>
+#include <cmath>
 
 /// PLAYER ///////////////////////////////////////////////
-CORE::Player::Player(GLFWwindow *window):Entity(window){}; //bagos
+CORE::Player::Player(GLFWwindow *window):Entity(window)
+{
+    cord.X = 5;
+    cord.Y = -10;
+    cord.Z = 5;
+    axis.Y = -90;
+}
 
 void CORE::Player::rotateCamera()
 {
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     static int basex = 900 / 2, basey =  700 / 2; // Вернуть нормальный размер окна через const unsigned int а не 900 на 700
     double xpos,ypos;
     float sensitivity = 0.05f;
-
+    /*
     glfwGetCursorPos(window,&xpos,&ypos);
     axis.X += (xpos-basex)* sensitivity;
     axis.Y += (basey-ypos) * sensitivity;
@@ -22,18 +29,29 @@ void CORE::Player::rotateCamera()
     if (axis.Y > 90) axis.Y = 90;
     if (axis.Y < -90) axis.Y = -90;
 
-    std::cout << "Axis X" << axis.X << std::endl << "Axis Y" << axis.Y << std::endl << std::endl;
+    //std::cout << "Axis X" << axis.X << std::endl << "Axis Y" << axis.Y << std::endl << std::endl;
     glfwSetCursorPos(window,basex,basey);
+    */
 }
 
 void CORE::Player::update()
 {
     rotateCamera();
+
     if (glfwGetKey(window,GLFW_KEY_ESCAPE) == GLFW_PRESS) glfwSetWindowShouldClose(window, true);
-    if (glfwGetKey(window,GLFW_KEY_W) == GLFW_PRESS) cord.Z += 0.1f;
-    if (glfwGetKey(window,GLFW_KEY_A) == GLFW_PRESS) cord.X += 0.1f;
-    if (glfwGetKey(window,GLFW_KEY_S) == GLFW_PRESS) cord.Z -= 0.1f;
-    if (glfwGetKey(window,GLFW_KEY_D) == GLFW_PRESS) cord.X -= 0.1f;
+
+    // W_key processing
+    if (glfwGetKey(window,GLFW_KEY_W) == GLFW_PRESS) cord.Z += 0.03f; 
+
+    // A_key processing
+    if (glfwGetKey(window,GLFW_KEY_A) == GLFW_PRESS) cord.X += 0.03f;
+
+    // S_key processing
+    if (glfwGetKey(window,GLFW_KEY_S) == GLFW_PRESS) cord.Z -= 0.03f;
+
+    // D_key processing
+    if (glfwGetKey(window,GLFW_KEY_D) == GLFW_PRESS) cord.X -= 0.03f;
+
     if (glfwGetKey(window,GLFW_KEY_SPACE) == GLFW_PRESS) cord.Y -= 0.1f;
     if (glfwGetKey(window,GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) cord.Y += 0.1f;
 }
