@@ -3,12 +3,19 @@
 
 
 GLFWwindow* CORE::Window::window;
+unsigned int CORE::Window::height;
+unsigned int CORE::Window::width;
 
-int CORE::Window::init(int width, int height, const char* title) {   
+
+int CORE::Window::init(unsigned int width, unsigned int height, const char* title) { 
+    
+    CORE::Window::width = width;
+    CORE::Window::height = height;
+
     if (!glfwInit())
         return -1;
 
-    window = glfwCreateWindow(width, height, title, NULL, NULL);
+    window = glfwCreateWindow(CORE::Window::width , CORE::Window::height, title, NULL, NULL);
 
     if (!window)
         glfwTerminate();

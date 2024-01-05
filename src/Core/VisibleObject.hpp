@@ -9,10 +9,10 @@ namespace CORE
         float *verteces;
         unsigned int verArrLenght;
         CORE::Color color;
+        void rotate();
 
     public:
         VisibleObject(GLFWwindow *window, CORE::Color color, CORE::Axis axis, CORE::Cord cord, float verteces[], unsigned int verArrLenght); // MB BUG
-
         ~VisibleObject();
 
         virtual void render() override;

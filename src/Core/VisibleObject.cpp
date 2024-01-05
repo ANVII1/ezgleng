@@ -17,6 +17,11 @@ CORE::VisibleObject::~VisibleObject()
     delete[] verteces;
 };
 
+void CORE::VisibleObject::rotate() 
+{
+    
+}
+
 void CORE::VisibleObject::render()
 {
     glLineWidth(10);

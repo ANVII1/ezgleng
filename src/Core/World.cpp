@@ -29,7 +29,7 @@ void CORE::World::CreateRect(CORE::Color color, CORE::Cord cord)
         -0.5f + cord.X, 0.0f + cord.Y,  0.5f + cord.Z
     };
     unsigned int verArrSize = 12;
-    CORE::Axis axis {0,0,0};
+    CORE::Axis axis {0,90,11};
     entities.push_back(new CORE::VisibleObject(window, color, axis, cord, verteces,verArrSize));
 }
 
